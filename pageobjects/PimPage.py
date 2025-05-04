@@ -11,6 +11,7 @@ class Pim:
         self.driver=driver
         time.sleep(5)
         self.username_box = (By.NAME, "username")
+
         self.password_box = (By.NAME, "password")
         self.login_button = (By.XPATH, "//button[@type='submit']")
         self.pim_button=(By.XPATH,"//*[@id='app']/div[1]/div[1]/aside/nav/div[2]/ul/li[2]/a")
@@ -65,9 +66,11 @@ class Pim:
         ).send_keys(ln)
 
     def addemployeeid(self,id):
-        WebDriverWait(self.driver, 10).until(
+        ef=WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located(self.employee_id)
-        ).send_keys(id)
+        )
+        ef.clear()
+        ef.send_keys(id)
 
 
     def clicksavebutton(self):
@@ -75,6 +78,3 @@ class Pim:
             EC.presence_of_element_located(self.save_button)
         ).click()
 
-    # def getSuccessMessage(self):
-    #         success_message_element = self.driver.find_element(By.XPATH,"//div[contains(text(), 'Successfully Saved')]")
-    #         return success_message_element.text

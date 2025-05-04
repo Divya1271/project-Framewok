@@ -31,7 +31,5 @@ class Test_003_Pim:
         self.pm.addlastname(self.ln)
         self.pm.addemployeeid(self.id)
         self.pm.clicksavebutton()
-        # self.pm.getSuccessMessage()
         time.sleep(5)
-        # assert "Successfully Saved" in self.pm.getSuccessMessage(), "User not added successfully."
 
