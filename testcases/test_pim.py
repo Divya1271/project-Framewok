@@ -32,4 +32,5 @@ class Test_003_Pim:
         self.pm.addemployeeid(self.id)
         self.pm.clicksavebutton()
         time.sleep(5)
+        print("User added Successfully")
 
